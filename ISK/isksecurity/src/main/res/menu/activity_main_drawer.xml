@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/home"
+            android:title="@string/home" />
+        <item
+            android:id="@+id/user_log"
+            android:icon="@drawable/log"
+            android:title="@string/user_log" />
+        <!--<item-->
+            <!--android:id="@+id/nav_gallery"-->
+            <!--android:icon="@android:drawable/ic_menu_gallery"-->
+            <!--android:title="Gallery" />-->
+        <item
+            android:id="@+id/add_user"
+            android:icon="@drawable/user"
+            android:title="@string/add_users" />
+        <item
+            android:id="@+id/massage"
+            android:icon="@drawable/massage"
+            android:title="@string/pin_massage" />
+        <item
+            android:id="@+id/battery"
+            android:icon="@drawable/battery"
+            android:title="@string/battery" />
+    </group>
+
+    <item android:title="Other">
+        <menu>
+
+            <item
+                android:id="@+id/add_lock"
+                android:icon="@drawable/addlock"
+                android:title="@string/addlock" />
+
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/settings"
+                android:title="@string/setting" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/share"
+                android:title="@string/Shar_App" />
+            <item
+                android:id="@+id/log_out"
+                android:icon="@drawable/logout"
+                android:title="@string/log_out" />
+        </menu>
+    </item>
+
+</menu>

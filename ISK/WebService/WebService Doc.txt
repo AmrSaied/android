@@ -1,0 +1,158 @@
+
+LOGIN
+http://isk-smartkey.rhcloud.com/SmartKeyWebService/oauth/token
+-POST
+-post Parameters ( grant_type: client_credentials  && client_id : hossamabdalh@gmail.com && client_secret : 1234 )
+-get data
+http://isk-smartkey.rhcloud.com/SmartKeyWebService/user/data
+- POST
+-POST parameter ( email : hossamabdalh@gmail.com)
+-headers : Authorization : bearer access token
+the only services which do not need authorization header are 
+1- login
+2- registeration
+==============================================
+
+/userLogs/update  
+-sent Parameter with Request
+("user_id")Integer
+("group_id")Integer
+("year")Integer
+("month")Integer
+("day")Integer
+("hour")Integer
+("minute") Integer
+("second")int
+
+
+/userLogs/get  
+-sent Parameter with Request
+("user_id")Integer
+("group_id")Integer
+
+
+/register
+-sent parameter with Request
+("first_name")String
+("last_name")String
+("email")String
+("phone")String
+-sent headers
+("password")String
+
+
+/message/user/send
+-sent parameters
+("from_user_id") Integer
+("to_user_id")Integer
+("year")Integer
+("month")Integer
+("day")Integer
+("hour")Integer
+("minute")Integer
+("second") int
+("content")  String
+
+
+/message/user/get
+-sent parameters
+("user_id")Integer
+
+
+/message/group/send
+-sent parameters
+("from_user_id") Integer
+("to_group_id")Integer
+("year")Integer
+("month")Integer
+("day")Integer
+("hour")Integer
+("minute") Integer
+("second") int
+("content")  String
+
+
+/message/group/get
+-sent parameters
+("user_id") Integer
+("group_id") Integer
+
+/login
+-sent headers
+@("email") String 
+@("password") String
+
+
+/group/create
+-sent parameters
+@("secretKey") String
+@("user_id")Integer
+
+/group/addUser
+-sent parameters
+@("group_id")Integer , 
+@("user_id")Integer ,
+@("password")String ,
+@("user_to_be_added_id")Integer ,
+@("removal_year") Integer ,
+@("removal_month") Integer ,
+@("removal_day") Integer ,
+@("removal_hour") Integer ,
+@("removal_minute") Integer ,
+@("removal_second") int ,
+@("permission")Integer
+
+
+/group/addUserWithEmail
+-sent parameters
+@("group_id")Integer , 
+@("user_id")Integer ,
+@("password")String ,
+@("user_to_be_added_email")String ,
+@("removal_year") Integer ,
+@("removal_month") Integer ,
+@("removal_day") Integer ,
+@("removal_hour") Integer ,
+@("removal_minute") Integer ,
+@("removal_second") int ,
+@("permission")Integer
+
+/group/addUserWithPhone
+-sent parameters
+@("group_id")Integer , 
+@("user_id")Integer ,
+@("password")String ,
+@("phone")String ,
+@("removal_year") Integer ,
+@("removal_month") Integer ,
+@("removal_day") Integer ,
+@("removal_hour") Integer ,
+@("removal_minute") Integer ,
+@("removal_second") int ,
+@("permission")Integer
+
+/group/removeUser
+-sent parameters
+@("group_id")Integer , 
+@("user_id")Integer ,
+@("password")String ,
+@("user_to_be_deleted_id")Integer
+
+
+/group/getUsers
+-sent parameters
+@("group_id")Integer ,
+@("user_id")Integer
+
+
+/batteryLogs/update
+-sent parameters
+@("battery_status") String , 
+@("group_id") Integer , 
+@("date") Date
+
+
+/batteryLogs/get
+-sent parameters
+@("group_id")Integer ,
+@("user_id")Integer
