@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<title>Presnter</title>
+	<link rel="stylesheet" href="lib/tau/wearable/theme/default/tau.min.css">
+	<link rel="stylesheet" media="all and (-tizen-geometric-shape: circle)" href="lib/tau/wearable/theme/default/tau.circle.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="ui-page ui-page-active" id="main">
+		<header class="ui-header">
+			<h2 class="ui-title">Presenter</h2>
+		</header>
+		<div class="ui-content">
+			<ul class="ui-listview">
+			
+							<li class="li-has-multiline li-has-thumb-right">
+					<a href="#PowerPointPage" onclick="PowerPowintSend()">PowerPowint
+					<span class="ui-li-sub-text li-text-sub">Swap To Controller</span>
+					<img src="css/images/powerpoint.png" class="ui-li-thumb-right"></a>
+				</li>
+				<li class="li-has-multiline li-has-thumb-right">
+					Video Player
+					<span class="ui-li-sub-text li-text-sub">Play and pause ur Videos</span>
+					<img src="css/images/media-player.png" class="ui-li-thumb-right">
+				</li>
+				<li class="li-has-multiline li-has-thumb-right">
+					<a href="#music_player_page">Music
+					<span class="ui-li-sub-text li-text-sub">Play ur Music</span>
+					<img src="css/images/music.png" class="ui-li-thumb-right"></a>
+				</li>
+
+				
+					<li class="li-has-multiline li-has-thumb-right">
+				<a href="/Setting.html">	Setting
+					<span class="ui-li-sub-text li-text-sub">Open Connection </span>
+					<img src="css/images/setting.png" class="ui-li-thumb-right"></a>
+				</li>
+			
+			
+			
+			<!-- <li><a href="contents/header/index.html">Header</a></li>
+							<li><a href="contents/content/index.html">Content</a></li> -->
+				<!-- <li><a  href="#popupToast">List</a></li> -->
+		<!-- 	<li><a href="contents/popup/index.html">Popup</a></li>
+				<li><a href="contents/controls/index.html">Controls</a></li>
+				<li><a href="contents/navcontrols/index.html">Navi Controls</a></li>
+				<li><a href="contents/moreoptions/index.html">MoreOptions</a></li>
+				<li><a href="contents/rotaryevent/index.html">Rotary Event</a></li>
+				<li><a href="contents/etc/index.html">Etc</a></li>  -->
+			</ul>
+		</div>
+	</div>
+	
+	
+		<div id="popupToast" class="ui-popup ui-popup-toast">
+		<div class="ui-popup-content">
+			Please Check Your Connection From Setting
+		</div>
+	</div>
+	
+	
+	
+		<div id="PowerPointPage" class="ui-popup">
+		<div class="ui-popup-content">
+			Controller Your Persentation From Here
+			<button id="additionalBtnPopup-btn" href="#" class="ui-btn btn-additional" onclick="PlayPowerPoint()">Play</button>
+			<button id="additionalBtnPopup-btn" href="#" class="ui-btn btn-additional" onclick="PausePowerPoint()">Pause</button>
+		</div>
+		<div class="ui-popup-footer ui-side-button ui-grid-col-2">
+		
+			<a id="additionalBtnPopup-ok" href="#" class="ui-btn btn-icon-pervious" onclick="PerviousPowerPoint()">Pervious</a>
+				<a id="additionalBtnPopup-cancel" href="#" class="ui-btn btn-icon-next" onclick="NextPowerPoint()">Next</a>
+		</div>
+	</div>
+	
+	
+	    <div id="music_player_page" class="ui-page">
+      
+      
+
+            <div id="div_background"></div>
+            <div id="div_now_playing">
+                <div id="div_play" class="play btn">
+                    <audio id="myaudio"></audio>
+                </div>
+                <div id="div_prev" class="btn"></div>
+                <div id="div_next" class="btn"></div>        
+            </div>
+      
+    </div>
+	
+	
+	
+	<script type="text/javascript" src="lib/tau/wearable/js/tau.js"></script>
+	<script type="text/javascript" src="js/circle-helper.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/lowBatteryCheck.js"></script>
+		<script>
+			(function(){
+				var page = document.getElementById("main"),
+					listHelper,
+					elScroller;
+
+				page.addEventListener("pagebeforeshow", function (e) {
+					var list;
+
+					elScroller = page.querySelector(".ui-scroller");
+					if (elScroller) {
+						list = elScroller.querySelector(".ui-listview");
+					}
+
+					if (elScroller && list) {
+						listHelper = tau.helper.SnapListStyle.create(list, {animate: "scale"});
+
+						elScroller.setAttribute("tizen-circular-scrollbar", "");
+					}
+				});
+
+				page.addEventListener("pagebeforehide", function (e) {
+					if (listHelper) {
+						listHelper.destroy();
+
+						listHelper = null;
+
+						if (elScroller) {
+							elScroller.removeAttribute("tizen-circular-scrollbar");
+						}
+					}
+				});
+			}())
+		</script>
+		
+</body>
+</html>

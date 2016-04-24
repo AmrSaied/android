@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="443.0" prefWidth="618.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presenter.FXMLDocumentController">
+   <children>
+      <TabPane prefHeight="267.0" prefWidth="618.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Power Point">
+               <content>
+                  <AnchorPane prefHeight="216.0" prefWidth="618.0">
+                     <children>
+                        <TableView layoutX="-4.0" layoutY="-6.0" prefHeight="392.0" prefWidth="456.0">
+                          <columns>
+                            <TableColumn prefWidth="126.0" text="File Name" />
+                            <TableColumn prefWidth="217.0" text="Path" />
+                              <TableColumn minWidth="9.0" prefWidth="112.0" text="Sort Order" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="464.0" layoutY="168.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="149.0" text="Browse File" textFill="#2b9737">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="487.0" layoutY="1.0" text="Power Point" textFill="#485194">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+          <Tab text="Videos">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TableView prefHeight="392.0" prefWidth="456.0">
+                           <columns>
+                              <TableColumn prefWidth="126.0" text="File Name" />
+                              <TableColumn prefWidth="217.0" text="Path" />
+                              <TableColumn minWidth="9.0" prefWidth="112.0" text="Sort Order" />
+                           </columns>
+                        </TableView>
+                        <Button layoutX="456.0" layoutY="176.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="149.0" text="Browse File" textFill="#2b9737">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="507.0" layoutY="1.0" text="Videoes" textFill="#2a1cab">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Music">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView prefHeight="392.0" prefWidth="456.0">
+                           <columns>
+                              <TableColumn prefWidth="126.0" text="File Name" />
+                              <TableColumn prefWidth="217.0" text="Path" />
+                              <TableColumn minWidth="9.0" prefWidth="112.0" text="Sort Order" />
+                           </columns>
+                        </TableView>
+                        <Button layoutX="456.0" layoutY="176.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="149.0" text="Browse File" textFill="#2b9737">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="516.0" layoutY="1.0" text="Music" textFill="#6438c7">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Label layoutX="6.0" layoutY="421.0" prefHeight="17.0" prefWidth="83.0" text="Status  :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="66.0" layoutY="421.0" text="disconnected" textFill="#dd0606">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="469.0" layoutY="407.0" text="(  Presenter  )" textFill="#ff8400">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
